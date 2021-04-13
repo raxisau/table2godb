@@ -11,14 +11,13 @@ import (
 )
 
 var (
-	dataSourceName = flag.String("ds", "", "Data source for the database username:password@tcp(127.0.0.1:3306)/dbname")
-	tableName      = flag.String("t", "", "Name of the table to code up")
+	driverName     = "mysql"
+	dataSourceName = flag.String("ds", "username:password@tcp(127.0.0.1:3306)/mysql", "Data source for the database")
+	tableName      = flag.String("t", "user", "Name of the table to code up")
 )
 
 func main() {
 	flag.Parse()
-
-	driverName := "mysql"
 
 	tblField := sql.NullString{}
 	tblType := sql.NullString{}
