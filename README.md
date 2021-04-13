@@ -7,7 +7,7 @@ Table2godb is a **prototype** for creating a Go [struct](https://golang.org/ref/
 This was inspired by [Zek](https://github.com/miku/zek) to shorten the time to create Data Access Structures for databases.
 
 ```bash
-table2godb "-ds=root:password@tcp(127.0.0.1:3306)/mysql" -t=user
+~/go/bin/table2godb "-ds=root:password@tcp(127.0.0.1:3306)/mysql" -t=user
 ```
 
 ```go
@@ -73,6 +73,8 @@ func (*User) TableName() string {
 
 ## Install
 
+Sometimes `go get` puts the result in strange places. On muy system it goes into `~/go/bin/table2godb`
+
 ```bash
 go get github.com/raxisau/table2godb/cmd...
 ```
@@ -80,7 +82,7 @@ go get github.com/raxisau/table2godb/cmd...
 ## Usage
 
 ```shell
-$ table2godb -h
+~/go/bin/table2godb -h
 Usage of table2godb:
   -ds string
         Data source for the database (default "username:password@tcp(127.0.0.1:3306)/mysql")
